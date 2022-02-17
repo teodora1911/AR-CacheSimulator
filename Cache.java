@@ -37,12 +37,12 @@ public class Cache {
         Cache.numberOfSets = cacheMemorySize / (associativity * cacheLineSize);
         int offsetBitsLength = (int)(Math.log(cacheLineSize) / Math.log(2));
 
-        Address.SET_LENGTH = (int)(Math.log(numberOfSets) / Math.log(2));
-        Address.TAG_LENGTH = ADDRESS_SIZE - Address.SET_LENGTH - offsetBitsLength;
+        Address.setLength = (int)(Math.log(numberOfSets) / Math.log(2));
+        Address.tagLength = ADDRESS_SIZE - Address.setLength - offsetBitsLength;
 
         System.out.println("Offset length : " + offsetBitsLength);
-        System.out.println("Set length : " + Address.SET_LENGTH);
-        System.out.println("Tag length : " + Address.TAG_LENGTH);
+        System.out.println("Set length : " + Address.setLength);
+        System.out.println("Tag length : " + Address.tagLength);
     }
 
     // read

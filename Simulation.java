@@ -65,6 +65,7 @@ public final class Simulation {
         System.out.println("Cache misses : " + proc2.cache.cacheMissNumber);
     }
 
+    // https://www.geeksforgeeks.org/program-to-find-whether-a-given-number-is-power-of-2/
     private static boolean powerOf2(int number){
         return (int)(Math.ceil((Math.log(number) / Math.log(2)))) == (int)(Math.floor(((Math.log(number) / Math.log(2)))));
     }

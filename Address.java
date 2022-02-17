@@ -2,8 +2,8 @@ import java.math.BigInteger;
 
 public class Address {
     
-    public static int TAG_LENGTH;
-    public static int SET_LENGTH;
+    public static int tagLength;
+    public static int setLength;
 
     private String address;
 
@@ -14,8 +14,8 @@ public class Address {
         String binaryAddress = new BigInteger(address, 16).toString(2);
 
         this.address = address;
-        this.tag = Integer.parseInt(binaryAddress.substring(0, TAG_LENGTH), 2);
-        this.set = Integer.parseInt(binaryAddress.substring(TAG_LENGTH, TAG_LENGTH + SET_LENGTH), 2);
+        this.tag = Integer.parseInt(binaryAddress.substring(0, tagLength), 2);
+        this.set = Integer.parseInt(binaryAddress.substring(tagLength, tagLength + setLength), 2);
     }
 
     public Address(int tag, int set){
