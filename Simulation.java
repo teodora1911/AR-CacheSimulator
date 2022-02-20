@@ -67,6 +67,9 @@ public final class Simulation {
 
     // https://www.geeksforgeeks.org/program-to-find-whether-a-given-number-is-power-of-2/
     private static boolean powerOf2(int number){
+        if(number <= 0){
+            return false;
+        }
         return (int)(Math.ceil((Math.log(number) / Math.log(2)))) == (int)(Math.floor(((Math.log(number) / Math.log(2)))));
     }
 
