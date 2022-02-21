@@ -53,6 +53,7 @@ public final class Bus {
                             // već je izmjenjen podatak i ne nalazi se u glavnoj memoriji
                             // treba prvo da upišemo u memoriju taj podatak
                             flush(currentCacheLine);
+                            System.out.println("BUS");
                             currentCacheLine.setState(MSIState.INVALID);
                         }
                         processor.cacheLock.release();

@@ -32,12 +32,12 @@ public final class Simulation {
 
         Cache.calculateLengths(cacheMemorySize, cacheLineSize, associativity);
 
-        Memory mem1 = new Memory("test" + File.separator + "mem14.txt", mainMemorySize);
+        Memory mem1 = new Memory("test" + File.separator + "mem11.txt", mainMemorySize);
         Cache cache1 = new Cache(associativity, ReplacementPolicy.OPTIMAL, mem1);
         Processor proc1 = new Processor(1, mem1, cache1);
         Bus.processors.add(proc1);
 
-        Memory mem2 = new Memory("test" + File.separator + "mem24.txt", mainMemorySize);
+        Memory mem2 = new Memory("test" + File.separator + "mem21.txt", mainMemorySize);
         Cache cache2 = new Cache(associativity, ReplacementPolicy.LRU, mem2);
         Processor proc2 = new Processor(2, mem2, cache2);
         Bus.processors.add(proc2);
