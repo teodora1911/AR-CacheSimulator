@@ -25,7 +25,7 @@ public class Processor implements Runnable {
         return this.cache.data.get(address.getSet()).getCacheLine(address.getTag());
     }
 
-    public static void sleep(){
+    private static void sleep(){
         try {
             Thread.sleep(rand.nextInt(11) * 100);
         } catch (InterruptedException ex) {
@@ -37,7 +37,7 @@ public class Processor implements Runnable {
     public void run(){
         Instruction currentAddress = null;
         while((currentAddress = memory.getNextAddress()) != null){
-            sleep();
+            //sleep();
             if(currentAddress.getInstruction().equals(Instruction.READ)){
 
                 Bus.performRead(identification, currentAddress.getAddress());
@@ -64,7 +64,7 @@ public class Processor implements Runnable {
                     ex.printStackTrace();
                 }
             }
-            sleep();
+            //sleep();
         }
     }
 }
