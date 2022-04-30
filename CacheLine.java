@@ -26,12 +26,18 @@ public class CacheLine {
 
     @Override
     public boolean equals(Object object){
-        if(object instanceof CacheLine){
-            CacheLine other = (CacheLine)object;
-            return this.tag == other.tag;
-        } else {
+        if(this == object){
+            return true;
+        }
+        if(object == null){
             return false;
         }
+        if(getClass() != object.getClass()){
+            return false;
+        }
+
+        CacheLine other = (CacheLine)object;
+        return tag == other.tag;
     }
 
     @Override

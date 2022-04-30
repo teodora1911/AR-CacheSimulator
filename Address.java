@@ -33,11 +33,18 @@ public class Address {
 
     @Override
     public boolean equals(Object object){
-        if(object instanceof Address){
-            Address other = (Address)object;
-            return this.tag == other.tag;
+        if(this == object){
+            return true;
         }
-        return false;
+        if(object == null){
+            return false;
+        }
+        if(getClass() != object.getClass()){
+            return false;
+        }
+
+        Address other = (Address)object;
+        return tag == other.tag;
     }
 
     @Override

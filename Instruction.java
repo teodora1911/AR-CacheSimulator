@@ -29,12 +29,18 @@ public class Instruction {
 
     @Override
     public boolean equals(Object object){
-        if(object instanceof Instruction){
-            Instruction other = (Instruction)object;
-            return this.address.equals(other.getAddress());
+        if(this == object){
+            return true;
+        }
+        if(object == null){
+            return false;
+        }
+        if(getClass() != object.getClass()){
+            return false;
         }
 
-        return false;
+        Instruction other = (Instruction)object;
+        return address.equals(other.getAddress());
     }
 
     @Override
